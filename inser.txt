@@ -1,0 +1,27 @@
+insert into citas (Paciente ,Doctor ,Fecha ,Hora ,Detalles ,Estado ) values (1, "27291902-2", "2020-06-10","03:30", "",1)
+
+select DUI , Nombre from empleados e where Priviliegios = 2
+
+select * from mascotas m 
+
+select m.Id_mascota , m.Nombre , c.Nombre_Cliente , c.Apelido_Cliente from mascotas m , clientes c where c.Id_Cliente =m.Dueño
+
+select * from citas c 
+insert into citas (Paciente ,Doctor ,Fecha ,Hora ,Detalles ,Estado ) values (, '27291902-2', '2020-05-27','04:08', '',1) 
+select m.Id_mascota , m.Nombre , c.Nombre_Cliente , c.Apelido_Cliente from mascotas m , clientes c where c.Id_Cliente =m.Dueño 
+
+select Id_raza ,Raza from razas r 
+select * from sexos
+
+select Id_Cliente ,Nombre_Cliente ,Apelido_Cliente from clientes
+
+select m.Id_mascota , m.Nombre ,m.Fecha_nacimiento,c.Nombre_Cliente,s.sexo ,r.Raza from mascotas m 
+inner join clientes c on c.Id_Cliente = m.Dueño
+inner join sexos s on s.Identificador = m.Sexo 
+inner join razas r on r.Id_raza = m.Raza 
+
+select c.Id_Cita ,m.Nombre ,e.Nombre_Empleado ,e2.Estado ,c.Detalles ,c.Fecha ,c.Hora from citas c inner join mascotas m on m.Id_mascota = c.Paciente 
+inner join empleados e on e.DUI = c.Doctor 
+inner join estados e2 on e2.Id_Estado = c.Estado where c.Fecha ="2020-05-27" 
+
+select * from citas c 
