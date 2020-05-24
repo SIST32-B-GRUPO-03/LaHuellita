@@ -19,18 +19,21 @@ if(isset($_GET["dato"])){
 	<th>Detalles</th>
 	<th>Opciones</th>
 	</tr>";
-	while($c=$cita->fetch_assoc()){
-		$respuesta.= "<tr>";
-		$respuesta.="<td>$c[Id_Cita]</td>
-		<td>$c[Nombre_Empleado]</td>
-		<td>$c[Hora]</td>
-		<td>$c[Fecha]</td>
-		<td>$c[Nombre]</td>
-		<td>$c[Estado]</td>
-		<td>$c[Detalles]</td>";
-		$respuesta.= "<td><button type='submmit' class='btn btn-forms' name='verInfoCliente'><i class='far fa-edit'></i>Editar</button></td>
-		</tr>";
-    }
+	if(!$cita==null){
+
+		while($c=$cita->fetch_assoc()){
+			$respuesta.= "<tr>";
+			$respuesta.="<td>$c[Id_Cita]</td>
+			<td>$c[Nombre_Empleado]</td>
+			<td>$c[Hora]</td>
+			<td>$c[Fecha]</td>
+			<td>$c[Nombre]</td>
+			<td>$c[Estado]</td>
+			<td>$c[Detalles]</td>";
+			$respuesta.= "<td><button type='submmit' class='btn btn-forms' name='verInfoCliente'><i class='far fa-edit'></i>Editar</button></td>
+			</tr>";
+		}
+	}
     echo $respuesta.="</table>";
 }
 				
