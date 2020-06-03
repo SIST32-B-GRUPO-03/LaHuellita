@@ -34,7 +34,7 @@
              <input class="form-control mr-sm-2" type="date" value="<?php
 		$fecha= date("Y")."-";
 		$fecha.= date("m")."-";
-		$fecha.= date("d")-1;
+		$fecha.= date("d");
 		echo $fecha;?>" placeholder="Búsqueda por fecha" aria-label="Search" name="fecha" id="fecha" onload="cargarDatos()">
                 <button type="button" class="btn btn-forms my-2 my-sm-0" onclick="cargarDatos()" name="buscar"><i class="fas fa-search"></i>Buscar</button>
 						</form>	

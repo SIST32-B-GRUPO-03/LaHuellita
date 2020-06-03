@@ -110,7 +110,6 @@
 		$citas->setDetalles("");
 		$citas->insert();
 	
-
 	}
 	?>
 
