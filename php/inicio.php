@@ -12,10 +12,10 @@ class inicioSesion extends Conexion{
     private $apellido;
    
     public function setUser($user){
-        $this->user=$user;
+        $this->user=parent::blackList($user);
     }
     public function setPass($pass){
-        $this->pass=md5(base64_encode($pass));
+        $this->pass=md5(base64_encode(parent::blackList($pass)));
     }
     public function setDUI($DUI){
         $this->DUI=$DUI;

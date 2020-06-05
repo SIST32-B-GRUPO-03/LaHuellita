@@ -1,5 +1,6 @@
 <?php
 	include("../menu.php");
+	require("../php/Clientes.php");
 ?>
 
 <!DOCTYPE html>
@@ -35,33 +36,28 @@
                        </svg>Registro de clientes</h4>
 			<hr class="line">
 			<form method="POST" action="clientes_agregar.php">
-			<div class="row mt-4 justify-content-center">
-				<div class="col-6">
-					<label>Id de cliente</label>
-					<input type="text" name="nombre_cliente" class="form-control">
-				</div>
-		  </div>
+			
 			<div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Nombre</label>
-					<input type="text" name="nombre_cliente" class="form-control">
+					<input type="text" name="Nombre" class="form-control" required>
 				</div>
 		  </div>
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Apellido</label>
-					<input type="text" name="nombre_cliente" class="form-control">
+					<input type="text" name="Apellido" class="form-control" required>
 				</div>
 		  </div>
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Número telefónico</label>
-					<input type="number" name="nombre_cliente" class="form-control">
+					<input type="text" name="telefónico" class="form-control" placeholder="0000-0000" required>
 				</div>
 		  </div>
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
-					<input type="submit" name="enviarDatosCliente" class="btn btn-forms" value="Registrar">
+					<input type="submit" name="Registrar" class="btn btn-forms" value="Registrar">
 					<input type="reset" name="cancelar" class="btn btn-forms" value="Limpiar">
 				</div>
 		  </div>
@@ -71,7 +67,12 @@
 </div>
 		
 </div>
-
+<?php
+	if(isset($_POST["Registrar"])){
+		$clientes=new Clientes;
+		$clientes->insert($_POST["Nombre"],$_POST["Apellido"],$_POST["telefónico"]);
+	}
+?>
 	<!-- jQuery CDN -->
   <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 

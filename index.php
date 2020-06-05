@@ -44,13 +44,13 @@
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Usuario</label>
-					<input type="text" name="usuario" class="form-control">
+					<input type="text" name="usuario" class="form-control" required>
 				</div>
 		  </div>
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Contraseña</label>
-					<input type="password" name="pass" class="form-control">
+					<input type="password" name="pass" class="form-control" required>
 				</div>
 		  </div>
 		  

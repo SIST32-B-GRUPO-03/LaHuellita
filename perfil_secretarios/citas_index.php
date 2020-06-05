@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Citas</title>
 	    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../font-awesome/css/all.css">
         <link rel="stylesheet" href="../css/menu-estilos.css">

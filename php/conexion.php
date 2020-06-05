@@ -10,13 +10,13 @@ class Conexion{
         die("Conexion fallida".$this->cn -> connect_error);
     }
     }
-    protected function ejecutar($sql){
+    public function ejecutar($sql){
         //$l=$cn->query("select Nombre from empleados e where Priviliegios = 2");
         //$l=$l->fetch_assoc();
         //return $l["Nombre"];
         return $this->cn->query($sql);
     }
-    public function blackList($cadena){
+    protected function blackList($cadena){
         $str=str_split($cadena);
         $filtado="";
 

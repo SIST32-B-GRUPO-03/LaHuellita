@@ -37,25 +37,25 @@
 			<form method="POST" action="clientes_agregar.php">
 			<div class="row mt-4 justify-content-center">
 				<div class="col-6">
-					<label>Id de veterinario</label>
-					<input type="text" name="nombre_cliente" class="form-control">
+					<label>DUI</label>
+					<input type="text" name="DUI" class="form-control">
 				</div>
 		  </div>
 			<div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Nombre</label>
-					<input type="text" name="nombre_cliente" class="form-control">
+					<input type="text" name="Nombre" class="form-control">
 				</div>
 		  </div>
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Apellido</label>
-					<input type="text" name="nombre_cliente" class="form-control">
+					<input type="text" name="Apellido" class="form-control">
 				</div>
 		  </div>
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
-					<label>Número telefónico</label>
+					<label>Usuario</label>
 					<input type="number" name="nombre_cliente" class="form-control">
 				</div>
 		  </div>
@@ -69,12 +69,7 @@
 	</div>
 </div>
 </div>
-		
-		
 	</div>
-
-
-
 	<!-- jQuery CDN -->
   <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 

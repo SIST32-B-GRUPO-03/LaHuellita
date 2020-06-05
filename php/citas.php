@@ -41,21 +41,7 @@ class Citas extends Conexion{
     public function getPaciente(){
         return $this->paciente;
     }
-    public function getFecha(){
-        return $this->fecha;
-    }
-    public function getDoctor(){
-        return $this->doctor;
-    }
-    public function getHora(){
-        return $this->hora;
-    }
-    public function getEstado(){
-        return $this->estado;
-    }
-    public function getDetalles(){
-        return $this->detalles;
-    }
+    
     
     public function insert(){
       $sql="insert into citas (Paciente ,Doctor ,Fecha ,Hora ,Detalles ,Estado ) values ($this->paciente, '$this->doctor', '$this->fecha','$this->hora', '$this->detalles',$this->estado)";
