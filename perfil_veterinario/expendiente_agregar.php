@@ -36,7 +36,23 @@
 			<h4><i class="fas fa-dog"></i>Registrar nuevo expediente</h4>
 			<hr class="line">
 			<form method="POST">
-
+			<div class="row mt-4 justify-content-center">
+				<div class="col-6">
+					<label>Seleccione una mascota</label>
+					<?php
+					
+					$nombres=$expedientes->selectNombre();
+			 		
+					echo "<select class='form-control' name='paciente'>";
+					
+					while($nombre=$nombres->fetch_assoc()){
+						echo "<option value='$nombre[Id_mascota]'>$nombre[Nombre]</option>";
+						
+					}
+					echo "</select>";
+					?>
+				</div>
+		  </div>
            
 			<div class="row mt-4 justify-content-center">
 				<div class="col-6">
@@ -62,23 +78,7 @@
 					<input type="text" name="consumir" class="form-control" required>
 				</div>
 		  </div>
-		  <div class="row mt-4 justify-content-center">
-				<div class="col-6">
-					<label>Seleccione una mascota</label>
-					<?php
-					
-					$nombres=$expedientes->selectNombre();
-			 		
-					echo "<select class='form-control' name='paciente'>";
-					
-					while($nombre=$nombres){
-						echo "<option value='$nombre[Id_mascota]'>$nombre[Nombre]</option>";
-						
-					}
-					echo "</select>";
-					?>
-				</div>
-		  </div>
+		  
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<input type="submit" name="enviarDatosExpediente" class="btn btn-forms" value="Registrar">

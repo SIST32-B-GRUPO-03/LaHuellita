@@ -56,7 +56,7 @@
            //while ($m=$respuesta->fetch_assoc()) {
             //echo "<option value='$m[Id_mascota]'>$m[Nombre]</option>";
            //}
-            return $respuesta->fetch_assoc();
+            return $respuesta;
 
             /*select m.Nombre, Id_mascota from mascotas
            */ 
