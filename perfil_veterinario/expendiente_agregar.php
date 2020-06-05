@@ -37,22 +37,7 @@
 			<hr class="line">
 			<form method="POST">
 
-            <div class="row mt-4 justify-content-center">
-				<div class="col-6">
-					<label>Seleccione una mascota</label>
-					<?php
-					
-					$nombre=$expedientes->selectNombre();
-					echo "<select class='form-control' name='paciente'>";
-					
-					while($nombre=$nombres->fetch_assoc()){
-						echo "<option value='$nombre[Id_mascota]'>$nombre[mascota_nombre]</option>";
-					}
-					echo "</select>";
-					?>
-				</div>
-		  </div>
-			
+           
 			<div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Observaciones</label>
@@ -62,19 +47,36 @@
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Sintomas</label>
-					<input type="date" name="sintomas" class="form-control" required>
+					<input type="text" name="sintomas" class="form-control" required>
 				</div>
 		  </div>
           <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Vacunas</label>
-					<input type="date" name="vacunas" class="form-control" required>
+					<input type="text" name="vacunas" class="form-control" required>
 				</div>
 		  </div>
           <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Medicamentos consumidos previamente</label>
-					<input type="date" name="consumir" class="form-control" required>
+					<input type="text" name="consumir" class="form-control" required>
+				</div>
+		  </div>
+		  <div class="row mt-4 justify-content-center">
+				<div class="col-6">
+					<label>Seleccione una mascota</label>
+					<?php
+					
+					$nombres=$expedientes->selectNombre();
+			 		
+					echo "<select class='form-control' name='paciente'>";
+					
+					while($nombre=$nombres){
+						echo "<option value='$nombre[Id_mascota]'>$nombre[Nombre]</option>";
+						
+					}
+					echo "</select>";
+					?>
 				</div>
 		  </div>
 		  <div class="row mt-4 justify-content-center">
@@ -83,10 +85,13 @@
 					<input type="reset" name="cancelar" class="btn btn-forms" value="Limpiar">
 				</div>
 		  </div>
+		 
+			
 		</form>
 	</div>
 </div>
 </div>
+
 		
 		
 	</div>

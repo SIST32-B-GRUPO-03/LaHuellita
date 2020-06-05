@@ -52,9 +52,14 @@
         }
 
         public function selectNombre(){
-            $respuesta = parent::ejecutar("select e.id_expediente, e.obervaciones, e.sintomas, e.vacunas, e.consume_medicamento from expediente_mascota e
-            inner join mascotas m on m.Id_mascota=e.mascota_nombre");
-            return $respuesta;
+           $respuesta = parent::ejecutar("select Nombre, Id_mascota from mascotas");
+           //while ($m=$respuesta->fetch_assoc()) {
+            //echo "<option value='$m[Id_mascota]'>$m[Nombre]</option>";
+           //}
+            return $respuesta->fetch_assoc();
+
+            /*select m.Nombre, Id_mascota from mascotas
+           */ 
         }
      }
      
