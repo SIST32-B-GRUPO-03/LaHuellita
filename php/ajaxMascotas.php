@@ -2,6 +2,7 @@
 require ("mascotas.php");
 
 $mascotas= new Mascotas();
+$nombre=$_GET["dato"];
 $salida="<table class='table table-stripe'>
 				
 		<tr>
@@ -16,7 +17,7 @@ $salida="<table class='table table-stripe'>
 	</tr>
 		<tr>";
 					
-		$mascota=$mascotas->select();
+		$mascota=$mascotas->select($nombre);
 		if (!$mascota==null) {
 			
 			while($m=$mascota->fetch_assoc()){
@@ -27,7 +28,7 @@ $salida="<table class='table table-stripe'>
 				<td>$m[Raza]</td>
 				<td>$m[Nombre_Cliente]</td>
 				<td>$m[sexo]</td>";
-				$salida.= "<td><button type='button' class='btn btn-forms' name='verInfoCliente'><i class='far fa-edit'></i>Editar</button></td>
+				$salida.= "<td><button type='submit' class='btn btn-forms' value='$m[Id_mascota]' name='mascota'><i class='far fa-edit'></i>Editar</button></td>
 				</tr>";
 			}
 		}

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Formulario Cliente</title>
+	<title>Registro de clientes</title>
 	 <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../font-awesome/css/all.css">
@@ -14,13 +14,14 @@
 <body onload="cargarDatos()">
 	
 	<div class="container shadow p-3 mb-5 bg-white rounded">
-	<div class="row">
-		<div class="col-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 align-content-start mt-4">
+	
+		<div class="row justify-content-start">
+
+		<div class="col-4 align-content-start mt-4">
 		<label for="busqueda">Buscar:</label>
 		<input type="text" class="form-control" id="busqueda" placeholder="Nombre" onkeyup="cargarDatos()">
 		</div>
-	</div>
-		<div class="row justify-content-end">
+		</div>
 			<div class="col-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
 				<a href="clientes_agregar.php"><button type="button" class="btn btn-agg" name="agregarCliente"><i class="fas fa-plus"></i>Nuevo Cliente</button></a>
 			</div>

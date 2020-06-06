@@ -1,15 +1,14 @@
 <?php
 	require("../menu.php");
 	require("../php/mascotas.php");
-
-	$mascotas= new Mascotas();
-	
+    $mascotas= new Mascotas();
+    $mascota=$_POST["mascota"];
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Agregar cliente</title>
+	<title>Modificar informacion</title>
 	    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../font-awesome/css/all.css">
         <link rel="stylesheet" href="../css/menu-estilos.css">
@@ -33,7 +32,7 @@
 		<div class="row">
 			<div class="col col-lg-12 col-md-8 col-sm-4">
 				<div class="bg-form">
-			<h4><i class="fas fa-dog"></i>Registrar nuevo paciente</h4>
+			<h4><i class="far fa-clock"></i>Modificar datos de la mascota</h4>
 			<hr class="line">
 			<form method="POST">
 			
@@ -107,26 +106,24 @@
 		</form>
 	</div>
 </div>
-</div>
-		
-		
+</div>			
 	</div>
-	<?php
+    <?php
 	if(isset($_POST["enviarDatosMascota"])){
 		//echo $_POST["fecha"];
-
 		$mascotas->setNombre($_POST["nombre"]);
 		$mascotas->setFechanacimiento($_POST["fecha"]);
 		$mascotas->setRaza($_POST["raza"]);
 		$mascotas->setDueño($_POST["dueño"]);
 		$mascotas->setSexo($_POST["sexo"]);
-		$mascotas->insert();
+        $mascotas->modificar($mascota);
+        header("location:mascota_index.php");
 
 	}
 	?>
-
 	<!-- jQuery CDN -->
   <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 
 </body>
 </html>
+

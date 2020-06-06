@@ -31,36 +31,34 @@ class Mascotas extends Conexion{
         
     }
  
-    public function getNombre(){
-        return $this->nombre;
-    }
-    public function getFechanacimiento(){
-        return $this->fechaNacimiento;
-    }
-    public function getRaza(){
-        return $this->Raza;
-    }
-    public function getDueño(){
-        return $this->dueño;
-    }
-    public function getSexo(){
-        return $this->sexo;
-    }
+    //public function getNombre(){
+    //    return $this->nombre;
+    //}
+    //public function getFechanacimiento(){
+    //    return $this->fechaNacimiento;
+    //}
+    //public function getRaza(){
+    //    return $this->Raza;
+    //}
+    //public function getDueño(){
+    //    return $this->dueño;
+    //}
+    //public function getSexo(){
+    //    return $this->sexo;
+    //}
    
     
     public function insert(){
       $sql="INSERT INTO mascotas
       (Nombre, Fecha_nacimiento, Raza, Dueño, Sexo)
-      VALUES('$this->nombre', '$this->fechaNacimiento', $this->Raza, $this->dueño, $this->sexo)";
-     
-     
+      VALUES('$this->nombre', '$this->fechaNacimiento', $this->Raza, $this->dueño, $this->sexo)"; 
       parent::ejecutar($sql);
     }
-    public function select(){
+    public function select($n){
         $respuesta = parent::ejecutar("select m.Id_mascota , m.Nombre ,m.Fecha_nacimiento,c.Nombre_Cliente,s.sexo ,r.Raza from mascotas m 
         inner join clientes c on c.Id_Cliente = m.Dueño
         inner join sexos s on s.Identificador = m.Sexo 
-        inner join razas r on r.Id_raza = m.Raza ");
+        inner join razas r on r.Id_raza = m.Raza where m.Nombre like ('%$n%') ");
         return $respuesta;
     }
     protected function delete(){}
@@ -76,6 +74,20 @@ class Mascotas extends Conexion{
     }
     public function selectRazas(){
         $respuesta = parent::ejecutar("select Id_raza ,Raza from razas r");
+        return $respuesta;
+    }
+    public function modificar($id){
+        $sql="UPDATE veterinaria.mascotas
+        SET Nombre='$this->nombre', Fecha_nacimiento='$this->fechaNacimiento', Raza=$this->Raza, Dueño=$this->dueño, Sexo=$this->sexo
+        WHERE Id_mascota=$id;
+        ";
+        parent::ejecutar($sql);
+    }
+    public function selectM($n){
+        $respuesta = parent::ejecutar("select m.Id_mascota , m.Nombre ,m.Fecha_nacimiento,c.Nombre_Cliente,s.sexo ,r.Raza from mascotas m 
+        inner join clientes c on c.Id_Cliente = m.Dueño
+        inner join sexos s on s.Identificador = m.Sexo 
+        inner join razas r on r.Id_raza = m.Raza where m.Id_mascota = $n");
         return $respuesta;
     }
 
