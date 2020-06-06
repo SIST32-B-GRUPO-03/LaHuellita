@@ -24,6 +24,7 @@ $salida="<table class='table table-stripe'>
 				$salida.= "<tr>";
 				$salida.= "<td>$m[Id_mascota]</td>
 				<td>$m[Nombre]</td>
+				
 				<td>$m[Fecha_nacimiento]</td>
 				<td>$m[Raza]</td>
 				<td>$m[Nombre_Cliente]</td>

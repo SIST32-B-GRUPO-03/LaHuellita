@@ -84,11 +84,15 @@ class Mascotas extends Conexion{
         parent::ejecutar($sql);
     }
     public function selectM($n){
-        $respuesta = parent::ejecutar("select m.Id_mascota , m.Nombre ,m.Fecha_nacimiento,c.Nombre_Cliente,s.sexo ,r.Raza from mascotas m 
+        $respuesta = parent::ejecutar("select m.Nombre ,m.Fecha_nacimiento,c.Id_cliente, s.sexo ,r.Id_raza from mascotas m 
         inner join clientes c on c.Id_Cliente = m.Dueño
         inner join sexos s on s.Identificador = m.Sexo 
         inner join razas r on r.Id_raza = m.Raza where m.Id_mascota = $n");
         return $respuesta;
+    }
+    public function selectMascota($id){
+        $sql="SELECT Nombre, Fecha_nacimiento FROM mascotas where id_mascota=$id";
+        return parent::ejecutar($sql)->fetch_assoc();
     }
 
 }

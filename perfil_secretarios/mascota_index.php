@@ -3,6 +3,17 @@
 	require("../php/mascotas.php");
 	
 	$mascotas= new Mascotas();
+	if(isset($_POST["enviarDatosMascota"])){
+		//echo $_POST["fecha"];
+		$mascotas->setNombre($_POST["nombre"]);
+		$mascotas->setFechanacimiento($_POST["fecha"]);
+		$mascotas->setRaza($_POST["raza"]);
+		$mascotas->setDueño($_POST["dueño"]);
+		$mascotas->setSexo($_POST["sexo"]);
+        $mascotas->modificar($_POST["id"]);
+		//header("location:mascota_index.php.php");
+
+	}
 	
 ?>
 

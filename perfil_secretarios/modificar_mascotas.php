@@ -1,9 +1,11 @@
 <?php
 	require("../menu.php");
 	require("../php/mascotas.php");
-    $mascotas= new Mascotas();
-    $mascota=$_POST["mascota"];
-?>
+	$mascotas= new Mascotas();
+	$mascota=$_POST["mascota"];
+	$datos=$mascotas->selectM($mascota)->fetch_assoc();
+	
+	?>
 
 <!DOCTYPE html>
 <html>
@@ -34,18 +36,19 @@
 				<div class="bg-form">
 			<h4><i class="far fa-clock"></i>Modificar datos de la mascota</h4>
 			<hr class="line">
-			<form method="POST">
-			
+			<form method="POST" action="mascota_index.php">
+		
+
 			<div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Nombre del paciente</label>
-					<input type="text" name="nombre" class="form-control">
+					<input type="text" name="nombre" class="form-control" value='<?php echo $datos["Nombre"]?>'>
 				</div>
 		  </div>
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Fecha de nacimiento</label>
-					<input type="date" name="fecha" class="form-control" required>
+					<input type="date" name="fecha" class="form-control" value='<?php echo $datos["Fecha_nacimiento"]?>' required>
 				</div>
 		  </div>
 		  <div class="row mt-4 justify-content-center">
@@ -57,7 +60,12 @@
 					echo "<select class='form-control' name='raza'>";
 					
 					while($raza=$razas->fetch_assoc()){
-						echo "<option value='$raza[Id_raza]'>$raza[Raza]</option>";
+						if($datos['Id_raza']==$raza['Id_raza']){
+							echo "<option selected value='$raza[Id_raza]'>$raza[Raza]</option>";
+						}else{
+
+							echo "<option value='$raza[Id_raza]'>$raza[Raza]</option>";
+						}
 					}
 					echo "</select>";
 					?>
@@ -70,9 +78,13 @@
 					
 					$sexos=$mascotas->selectSexos();
 					echo "<select class='form-control' name='sexo'>";
-					
+
 					while($sexo=$sexos->fetch_assoc()){
-						echo "<option value='$sexo[Identificador]'>$sexo[sexo]</option>";
+						if($datos['sexo']==$sexo['sexo']){
+							echo "<option selected value='$sexo[Identificador]'>$sexo[sexo]</option>";
+						}else{
+							echo "<option value='$sexo[Identificador]'>$sexo[sexo]</option>";
+						}
 	
 					}
 					echo "</select>";
@@ -89,7 +101,12 @@
 					echo "<select class='form-control' name='dueño'>";
 					
 					while($dueño=$dueños->fetch_assoc()){
-						echo "<option value='$dueño[Id_Cliente]'>$dueño[Nombre_Cliente] $dueño[Apelido_Cliente]</option>";
+						if($datos['Id_cliente']==$dueño['Id_Cliente']){
+							echo "<option selected value='$dueño[Id_Cliente]'>$dueño[Nombre_Cliente] $dueño[Apelido_Cliente]</option>";
+						}else{
+
+							echo "<option value='$dueño[Id_Cliente]'>$dueño[Nombre_Cliente] $dueño[Apelido_Cliente]</option>";
+						}
 					}
 					echo "</select>";
 					?>
@@ -99,28 +116,17 @@
 		  </div>
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
-					<input type="submit" name="enviarDatosMascota" class="btn btn-forms" value="Registrar">
+					<input type="submit" name="enviarDatosMascota" class="btn btn-forms" value="Modificar">
 					<input type="reset" name="cancelar" class="btn btn-forms" value="Limpiar">
 				</div>
 		  </div>
+		  <input type="text" name="id" class="invisible" value='<?php echo $mascota?>'>
 		</form>
 	</div>
 </div>
 </div>			
 	</div>
-    <?php
-	if(isset($_POST["enviarDatosMascota"])){
-		//echo $_POST["fecha"];
-		$mascotas->setNombre($_POST["nombre"]);
-		$mascotas->setFechanacimiento($_POST["fecha"]);
-		$mascotas->setRaza($_POST["raza"]);
-		$mascotas->setDueño($_POST["dueño"]);
-		$mascotas->setSexo($_POST["sexo"]);
-        $mascotas->modificar($mascota);
-        header("location:mascota_index.php");
-
-	}
-	?>
+    
 	<!-- jQuery CDN -->
   <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 
