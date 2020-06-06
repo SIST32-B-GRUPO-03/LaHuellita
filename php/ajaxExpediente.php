@@ -2,6 +2,7 @@
 
         require ("veterinario.php");
         $expedientes = new Expediente();
+        $nombre=$_GET["dato"];
         $salida="<table class='table table-striped'>
                 <tr>
                 <th>Id</th>
@@ -14,7 +15,7 @@
                 </tr>
             </tr>
                 <tr>";
-        $expediente=$expedientes->select();
+        $expediente=$expedientes->select($nombre);
         if(!$expediente==null){
             while($e=$expediente->fetch_assoc()){
                 $salida.="<tr>";

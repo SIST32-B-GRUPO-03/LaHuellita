@@ -63,9 +63,9 @@
            */ 
         }
 
-        public function select(){
+        public function select($n){
             $respuesta = parent::ejecutar("select e.id_expendiente, e.vacunas, e.sintomas, e.obervaciones,e.consume_medicamento, m.Nombre from expediente_mascota e
-            inner join mascotas m on m.Id_mascota=e.mascota_nombre");
+            inner join mascotas m on m.Id_mascota=e.mascota_nombre where m.Nombre like ('%$n%')");
             return $respuesta;
         }
      }

@@ -20,7 +20,11 @@
 	<div class="container shadow p-3 mb-5 bg-white rounded">
 		
 		
-		<div class="row justify-content-end">
+		<div class="row justify-content-start">
+		<div class="col-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
+		<label for="nombre">Buscar por nombre</label>
+				<input type="text" class="form-control col-5 align-content-start mt-4" id="nombre" name="nombre" onkeyup="cargarDatos()">
+			</div>
 			<div class="col-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
 				<a href="expendiente_agregar.php"><button type="button" class="btn btn-agg" name="agregarExpe"><i class="fas fa-plus"></i>Agregar nuevo expediente</button></a>
 			</div>
@@ -40,14 +44,14 @@
 </body>
 <script>
 function cargarDatos() {
-	
+	var dato=document.getElementById("nombre").value;
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			document.getElementById("respuesta").innerHTML = this.responseText;
 		}
 	};
-	xhttp.open("GET", `../php/ajaxExpediente.php`,true);
+	xhttp.open("GET", `../php/ajaxExpediente.php?dato=${dato}`,true);
 	xhttp.send();
 }
 </script>
