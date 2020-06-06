@@ -9,7 +9,7 @@
 
 
         public function setNomascota($nomMacota){
-            $this->nomMacota=parent::blaclist($nomMacota);
+            $this->nomMacota=parent::blacklist($nomMacota);
         }
         public function setObservaciones($observacion){
             $this->observacion=parent::blacklist($observacion);
@@ -44,10 +44,11 @@
 
         public function insert(){
             $sql = "INSERT INTO expediente_mascota
-            (mascota_nombre, obervaciones, sintomas, vacunas, consume_medicamento)VALUES('$this->nomMascota','$this->observacion',
-            '$this->sintoma','$this->vacunas','$this->consume')";
+            (vacunas, sintomas, obervaciones, consume_medicamento, mascota_nombre)VALUES('$this->vacunas','$this->sintoma',
+            '$this->observacion','$this->consume', $this->nomMacota)";
 
             parent::ejecutar($sql);
+            
            
         }
 
@@ -60,6 +61,11 @@
 
             /*select m.Nombre, Id_mascota from mascotas
            */ 
+        }
+
+        public function select(){
+            $respuesta = parent::ejecutar("select e.id_expediente, e.vacunas, e.sintomas, e.obervaciones, m.Nombre from expediente_mascota e
+            inner join mascotas m on m.Id_mascota=e.mascota_nombre");
         }
      }
      
