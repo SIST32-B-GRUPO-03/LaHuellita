@@ -64,8 +64,9 @@
         }
 
         public function select(){
-            $respuesta = parent::ejecutar("select e.id_expediente, e.vacunas, e.sintomas, e.obervaciones, m.Nombre from expediente_mascota e
+            $respuesta = parent::ejecutar("select e.id_expendiente, e.vacunas, e.sintomas, e.obervaciones,e.consume_medicamento, m.Nombre from expediente_mascota e
             inner join mascotas m on m.Id_mascota=e.mascota_nombre");
+            return $respuesta;
         }
      }
      
