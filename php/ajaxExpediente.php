@@ -25,8 +25,12 @@
                 <td>$e[sintomas]</td>
                 <td>$e[vacunas]</td>
                 <td>$e[consume_medicamento]</td>";
-                $salida.="<td><button type='button' class='btn btn-forms' name='verInfoExpnt'><i class='far fa-edit'></i>Editar</button></td>
+                
+                $salida.="<td><button type='button' class='btn btn-forms' name='verInfoExpnt'><i class='far fa-edit'></i>Editar</button>
+                <button type='button' class='btn btn-forms' name='eliminarExpnt'><i class='far fa-trash-alt'></i>Eliminar</button></td>
+                
                 </tr>";
+                
                 
             }
         }
