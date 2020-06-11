@@ -9,7 +9,7 @@ $salida="<table class='table table-stripe'>
 	    <th>Id paciente</th>
 		<th>Nombre</th>
 		<th>Fecha de nacimiento</th>
-					<th>Raza</th>
+		<th>Raza</th>
 		<th>Dueño</th>
 		<th>Sexo</th>
 		<th>Modificar</th>
