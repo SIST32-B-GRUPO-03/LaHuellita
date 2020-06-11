@@ -21,7 +21,7 @@ class Conexion{
         $filtado="";
 
         foreach($str as $letra){
-            if(!($letra=="'"||$letra==".")){
+            if(!($letra=="'"||$letra=="."||$letra=='"'||$letra==',')){
                 $filtado.=$letra;
             }
         }
