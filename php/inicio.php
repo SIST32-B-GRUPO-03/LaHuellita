@@ -45,8 +45,10 @@ class inicioSesion extends Conexion{
                       $_SESSION["Priviliegios"]=$m["Priviliegios"];
                       switch($_SESSION["Priviliegios"]){
                           case 1:
+                            header("location:perfil_administrador/veterinario_index.php");
                           break;
                           case 2:
+                            header("location:perfil_veterinario/expediente_index.php");
                           break;
                           case 3:
                             header("location:perfil_secretarios/citas_agregar.php");
