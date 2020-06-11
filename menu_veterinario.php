@@ -47,6 +47,28 @@
                         <ul class="collapse list-unstyled" id="petSubmenu">
                             <li><a href="mascota_agregar.php">Agregar nuevo</a></li>
                         </ul>
+
+                        
+                        
+                    </li>
+
+                    <li>
+                        
+                          <a href="#subMenupac" data-toggle="collapse" aria-expanded="false">
+                            <svg class="bi bi-pencil-square" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"/>
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd"/>
+                       </svg>
+                             Pacientes<svg class="bi bi-caret-down-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 01.753 1.659l-4.796 5.48a1 1 0 01-1.506 0z"/>
+                            </svg>
+                        </a>
+                        
+                        <ul class="collapse list-unstyled" id="subMenupac">
+                            <li><a href="mascota_agregar.php">Ver registro de pacientes</a></li>
+                        </ul>
+
+                        
                         
                     </li>
                     <li class="active">
@@ -60,31 +82,10 @@
                             </svg>
                         </a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li><a href="citas_index.php">Consultar citas</a></li>
+                            <li><a href="../perfil_secretarios/citas_index.php">Consultar citas</a></li>
                         </ul>
                     </li>
-
                     
-                   
-                    <li>
-                        <a href="../perfil_secretarios/mascota_index.php">
-                            <svg class="bi bi-people-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z"/>
-                            <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
-                            <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd"/>
-                            </svg>
-                            Pacientes
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg class="bi bi-people-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z"/>
-                            <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
-                            <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd"/>
-                            </svg>
-                            Perfil
-                        </a>
                     </li>
                      <li>
                         <a href="#">

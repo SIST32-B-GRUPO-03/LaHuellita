@@ -64,22 +64,7 @@
                             <li><a href="citas_index.php">Consultar historial</a></li>
                         </ul>
                     </li>
-                    <li>
-                        
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-                            <svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
-                         </svg>
-                            Veterinarios<svg class="bi bi-caret-down-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 01.753 1.659l-4.796 5.48a1 1 0 01-1.506 0z"/>
-                            </svg>
-                        </a>
-                        
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li><a href="#">Expedientes</a></li>
-                            <li><a href="#">Agregar nuevo</a></li>
-                        </ul>
-                    </li>
+                  
                      <li>
                         
                         <a href="#clientSubmenu" data-toggle="collapse" aria-expanded="false">
@@ -96,16 +81,7 @@
                             <li><a href="clientes_agregar.php">Agregar nuevo</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">
-                            <svg class="bi bi-people-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z"/>
-                            <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
-                            <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd"/>
-                            </svg>
-                            Perfil
-                        </a>
-                    </li>
+                   
                      <li>
                         <a href="#">
                         <svg class="bi bi-power" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
