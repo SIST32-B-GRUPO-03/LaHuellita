@@ -3,6 +3,14 @@
 	require("../php/veterinario.php");
 	
 	$expedientes= new Expediente();
+	if(isset($_POST["enviarDatosExpediente"])){
+		$expedientes->setNomascota($_POST["nomMascota"]);
+		$expedientes->setObservaciones($_POST["observacion"]);
+		$expedientes->setSintomas($_POST["sintoma"]);
+		$expedientes->setVacuna($_POST["vacunas"]);
+		$expedientes->setConsume($_POST["consume"]);
+		$expedientes->editar($_POST["id"]);
+	}
 	
 ?>
 

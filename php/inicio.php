@@ -1,5 +1,5 @@
 <?php
- session_start();
+ 
 
 require ("conexion.php");
 class inicioSesion extends Conexion{
@@ -45,7 +45,7 @@ class inicioSesion extends Conexion{
                       $_SESSION["Priviliegios"]=$m["Priviliegios"];
                       switch($_SESSION["Priviliegios"]){
                           case 1:
-                            header("location:perfil_administrador/veterinario_index.php");
+                            header("location:perfil_administrador/empleados_index.php");
                           break;
                           case 2:
                             header("location:perfil_veterinario/expediente_index.php");
@@ -84,5 +84,21 @@ class inicioSesion extends Conexion{
         FROM privilegios";
         return parent::ejecutar($sql);
     }
+
+    public function select($p){
+        $respuesta = parent::ejecutar("select e.DUI, e.Nombre_Empleado, e.Apellido, e.Usuario from empleados e
+        inner join privilegios p on p.Id_privilegios=e.Priviliegios where p.Usuario like ('%$p%')");
+        return $respuesta;
+    }
+    
+    public function editarEmpleado($usuario){
+        $sql="UPDATE veterinaria.empleados
+        SET Nombre_Empleado='$this->Nombre', Apellido='$this->apellido', Privilegios=$this->privilegios
+        WHERE DUI=$usuario";
+
+        parent::ejecutar($sql);
+    }
+
+    
 }
 ?>

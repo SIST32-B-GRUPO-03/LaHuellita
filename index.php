@@ -1,6 +1,7 @@
 <?php
     require("php/inicio.php");
-    $inicio2= new inicioSesion;
+	$inicio2= new inicioSesion;
+	session_start();
 ?>
 
 <!DOCTYPE html>

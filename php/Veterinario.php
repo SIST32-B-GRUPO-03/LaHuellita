@@ -68,6 +68,17 @@
             inner join mascotas m on m.Id_mascota=e.mascota_nombre where m.Nombre like ('%$n%')");
             return $respuesta;
         }
+
+        public function editar($id){
+            $sql="UPDATE veterinaria.expediente_mascota
+            SET vacunas='$this->vacunas', sintomas='$this->sintoma', obervaciones='$this->observacion',consume_medicamento='$this->consume',mascota_nombre=$this->nomMascota
+            WHERE id_expendiente=$id;";
+
+            parent::ejecutar($sql);
+        }
+
+
+        
      }
      
          
