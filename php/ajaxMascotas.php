@@ -17,7 +17,7 @@ $salida="<table class='table table-stripe'>
 	</tr>
 		<tr>";
 					
-		$mascota=$mascotas->selectM($nombre);
+		$mascota=$mascotas->select($nombre);
 		if (!$mascota==null) {
 			
 			while($m=$mascota->fetch_assoc()){
